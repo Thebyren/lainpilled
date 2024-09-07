@@ -1,8 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from './header.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Background from './Background.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<Header></Header>
+	<div class="content">
+	<Header/>
+	<Background>
+		<p>hola</p>
+	</Background>
+	<Footer/>
+	</div>
 </Layout>
+
+<style>
+	.content{
+		justify-content: space-between;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+	
+</style>

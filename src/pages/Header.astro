@@ -1,25 +1,50 @@
-
+---
+import Menu from "./Menu.astro";
+const items =[
+    {title: 'Links', link:'/links'},
+    {title: 'Pictures', link:'/pictures'},
+    {title: 'Music', link:'/music'},
+    {title: 'My setup', link:'/mysetup'},
+    ];
+---
 
 <header>
     <div class="background">
         <p class="title">
             lainpilled        
         </p>
+        <p class="subtitle">
+            I am connected to the world through the wired
+        </p>
     </div>
-    
-
+    <Menu items={items}></Menu>
 </header>
+
+
 <style>
+    header{
+        margin-bottom: 5rem;
+    }
     .title {
-        color:aliceblue;
-        font-size: x-large;
         margin-top: 0.5rem;
+        color:whitesmoke;
+        font-size: xx-large;
+        font-family: monospace;
+    }
+    .subtitle{
+        color:whitesmoke;
     }
     .background{
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 10rem;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 1rem;
+        height: 100%;
+
+        text-align: center;
+        
+        background-size: 19rem;
         background-image: url("/src/assets/lainBackground.gif");
     }
 </style>

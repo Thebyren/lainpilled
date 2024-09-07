@@ -12,7 +12,6 @@ const { items } = Astro.props;
     <ul>
     {
         items.map((item)=>{
-            console.log(item.title);
             return(
 
                 <li>
@@ -34,12 +33,11 @@ const { items } = Astro.props;
         justify-content: center;
     }
     a{
-        display: inline-block;
+        display: flex;
         color:aliceblue;
         text-decoration: none;
         font-size: large;
         font-weight: 500;
-        box-sizing: border-box;
         padding: 0.4rem 2rem;
         transition: trasnform 0.2s ease-in, color 0.2s ease-in, background-color 0.5s;
     }
@@ -47,5 +45,15 @@ const { items } = Astro.props;
         color:lightblue;
         transform: scale(1.1);
         background-color: slategray;
+        }
+    @media only screen and (max-width:600px) {
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding: 0;
+        }
     }
+    
 </style>

@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+// 1. Generar rutas estáticas
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map((entry: CollectionEntry<'blog'>) => ({
+    params: { slug: entry.slug },
+    props: { entry }, // Pasa el objeto `entry` completo con todas sus propiedades
+  }));
+}
+
+// 2. Usar props con tipado explícito
+const { entry }: { entry: CollectionEntry<'blog'> } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<h1>{entry.data.title}</h1>
+<p>Este es un contenido estático para verificar la renderización.</p>
+<Content/>
+<date datetime={entry.data.date?.toISOString()}>
+  {entry.data.date?.toDateString() || 'Fecha no disponible'}
+</date>

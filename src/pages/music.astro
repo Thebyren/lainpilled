@@ -1,12 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Music_player from "../components/Music.jsx";
-const items = [
-    { title: "links", link: "/lainpilled/links" },
-    { title: "pictures", link: "/lainpilled/pictures" },
-    { title: "home", link: "/lainpilled/" },
-    { title: "My setup", link: "/lainpilled/mysetup" },
-];
+import { music_menu_items } from "../content/data.astro";
+const items = music_menu_items
 ---
 <Layout title="lainpilled pictures" menuItems={items}>
     <div class="spotify-container">

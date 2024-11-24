@@ -7,12 +7,35 @@ import Minecraft from "../assets/minecraft.astro";
 import SpaceHey from "../assets/SpaceHey.astro";
 import Tux from "../assets/Tux_Mono.astro";
 
+export const defaultItems =[
+    {title: 'Links', link:'/lainpilled/links'},
+    {title: 'Pictures', link:'/lainpilled/pictures'},
+    {title: 'Music', link:'/lainpilled/music'},
+    {title: 'My setup', link:'/lainpilled/mysetup'},
+    ];
 export const links_menu_items = [
-    { title: "home", link: "/" },
-    { title: "Pictures", link: "/pictures" },
-    { title: "Music", link: "/music" },
-    { title: "My setup", link: "/mysetup" },
+    { title: "home", link: "/lainpilled/" },
+    { title: "Pictures", link: "/lainpilled/pictures" },
+    { title: "Music", link: "/lainpilled/music" },
+    { title: "My setup", link: "/lainpilled/mysetup" },
 ];
+export const mysetup_menu_items = [
+    { title: "links", link: "/lainpilled/links" },
+    { title: "pictures", link: "/lainpilled/pictures" },
+    { title: "music", link: "/lainpilled/music" },
+    { title: "home", link: "/lainpilled/" },
+];export const pictures_menu_items = [
+    { title: "links", link: "/lainpilled/links" },
+    { title: "home", link: "/lainpilled/" },
+    { title: "Music", link: "/lainpilled/music" },
+    { title: "My setup", link: "/lainpilled/mysetup" },
+];export const music_menu_items = [
+    { title: "links", link: "/lainpilled/links" },
+    { title: "pictures", link: "/lainpilled/pictures" },
+    { title: "home", link: "/lainpilled/" },
+    { title: "My setup", link: "/lainpilled/mysetup" },
+];
+
 
 export const links_items = [
     {

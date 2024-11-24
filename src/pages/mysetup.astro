@@ -1,12 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MySetupRender from "../components/MySetupRender.astro";
-const items = [
-    { title: "links", link: "/lainpilled/links" },
-    { title: "pictures", link: "/lainpilled/pictures" },
-    { title: "music", link: "/lainpilled/music" },
-    { title: "home", link: "/lainpilled/" },
-];
+import { mysetup_menu_items } from "../content/data.astro";
+const items = mysetup_menu_items
 ---
 
 <Layout title="lainpilled my setup" menuItems={items}>

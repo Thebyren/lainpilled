@@ -3,18 +3,12 @@ import Background from '../components/Background.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import LainBeloved from '../components/LainBeloved.astro';
-
+import {defaultItems} from "../content/data.astro"
 interface Props {
 	title: string;
 	menuItems?: { title: string; link: string }[];
 }
 
-const defaultItems =[
-    {title: 'Links', link:'/lainpilled/links'},
-    {title: 'Pictures', link:'/lainpilled/pictures'},
-    {title: 'Music', link:'/lainpilled/music'},
-    {title: 'My setup', link:'/lainpilled/mysetup'},
-    ];
 
 
 const { title, menuItems=defaultItems } = Astro.props;

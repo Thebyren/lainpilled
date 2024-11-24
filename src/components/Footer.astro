@@ -1,26 +1,25 @@
 <footer>
     <p>&copy 2024 Lainpilled. <a href="https://github.com/primalxaxa/lainwebsite">source code</a></p>
-    <p class="monero">Monero SMR: 454c2q6ZesJj7NiMgxwH8Gc1wTqExptJHChtuXb6sMUw2575LZ2P6AmKpLh5LB9Ldp8amPWHo8xmbGVqaNSVp3JJMhQ46My</p>
-    <p class="bitcoin">Bitcoin BTC: bc1q4gtqxk7ltvz4zplz95mv254yd0v626fzqw8mdl</p>
+    <p id="monero" class="monero">Monero SMR: 454c2q6ZesJj7NiMgxwH8Gc1wTqExptJHChtuXb6sMUw2575LZ2P6AmKpLh5LB9Ldp8amPWHo8xmbGVqaNSVp3JJMhQ46My</p>
+    <p id="bitcoin" class="bitcoin">Bitcoin BTC: bc1q4gtqxk7ltvz4zplz95mv254yd0v626fzqw8mdl</p>
 </footer>
 
 <script>
-const monero = document.querySelectorAll('p.monero')
-monero.forEach((p) => {
-    p.addEventListener('click', ()=>{
-        navigator.clipboard.writeText('454c2q6ZesJj7NiMgxwH8Gc1wTqExptJHChtuXb6sMUw2575LZ2P6AmKpLh5LB9Ldp8amPWHo8xmbGVqaNSVp3JJMhQ46My')
-        alert('wallet copied');
-});
-});
-  
-const bitcoin = document.querySelectorAll('p.bitcoin')
-bitcoin.forEach((p) => {
-    p.addEventListener('click', ()=>{
-        navigator.clipboard.writeText('bc1q4gtqxk7ltvz4zplz95mv254yd0v626fzqw8mdl')
-        alert('wallet copied');
-});
-});
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let monero = document.getElementById('monero');
+        monero?.addEventListener('click', () => {
+            navigator.clipboard.writeText('454c2q6ZesJj7NiMgxwH8Gc1wTqExptJHChtuXb6sMUw2575LZ2P6AmKpLh5LB9Ldp8amPWHo8xmbGVqaNSVp3JJMhQ46My');
+            alert('wallet copied');
+        });
+    
+        let bitcoin = document.getElementById('bitcoin');
+        bitcoin?.addEventListener('click', () => {
+            navigator.clipboard.writeText('bc1q4gtqxk7ltvz4zplz95mv254yd0v626fzqw8mdl');
+            alert('wallet copied');
+        });
+    });
+    </script>
+    
 
 <style>
     .monero, .bitcoin{

@@ -1,0 +1,32 @@
+---
+import Post from './post.astro';
+import { getCollection } from 'astro:content';
+
+// Obtiene las entradas del blog que empiezan con 'en/'
+const enBlogPosts = await getCollection('blog', ({ id }) => id.startsWith('en/'));
+
+// Ordena las entradas del blog por fecha de manera descendente
+const sortedBlogPosts = enBlogPosts.sort((a, b) => {
+  const dateA = new Date(a.data.date as unknown as string).getTime();
+  const dateB = new Date(b.data.date as unknown as string).getTime();
+  return dateB - dateA;
+});
+
+// Renderiza el contenido de cada entrada de blog
+const renderedBlogPosts = await Promise.all(
+  sortedBlogPosts.map(async (blogPostEntry) => {
+    const { Content } = await blogPostEntry.render();
+    return { ...blogPostEntry, Content }; // Retorna tanto los datos como el contenido renderizado
+  })
+);
+
+
+---
+
+<div>
+  {renderedBlogPosts.map(blogPostEntry => (
+    <Post entry={blogPostEntry} key={blogPostEntry.slug}>
+      <blogPostEntry.Content /> <!-- Renderiza el contenido Markdown -->
+    </Post>
+  ))}
+</div>

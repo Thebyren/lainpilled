@@ -1,0 +1,94 @@
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajusta el ancho de las columnas */
+    grid-gap: 1rem; /* Espaciado entre los elementos */
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 1200px;
+    min-height: 20rem;
+}
+
+.masonry-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Ajusta las imágenes para que conserven su proporción */
+.masonry-item img {
+    display: block;
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto; /* Conserva la proporción de altura */
+    object-fit: contain; /* Asegura que no se recorten */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    gap: 1rem;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(80, 120, 133);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+/* Transiciones de View Transition */
+:root {
+    --transition-duration: 0.5s;
+}
+
+.masonry-item::view-transition-name {
+    content: attr(id);
+}
+
+.modal-content::view-transition-name {
+    content: attr(id);
+}
+
+:root::view-transition-group(root) {
+    transition: transform var(--transition-duration), opacity var(--transition-duration);
+}
+
+:root:enter {
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+:root:enter-active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+:root:exit {
+    transform: scale(1);
+    opacity: 1;
+}
+
+:root:exit-active {
+    transform: scale(0.8);
+    opacity: 0;
+}

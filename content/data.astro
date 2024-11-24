@@ -1,0 +1,61 @@
+---
+import Discord from "../assets/discord.astro";
+import EmailList from "../assets/EmailList.astro";
+import Librechan from "../assets/librechan.astro";
+import LogoSteam from "../assets/LogoSteam.astro";
+import Minecraft from "../assets/minecraft.astro";
+import SpaceHey from "../assets/SpaceHey.astro";
+import Tux from "../assets/Tux_Mono.astro";
+
+export const links_menu_items = [
+    { title: "home", link: "/" },
+    { title: "Pictures", link: "/pictures" },
+    { title: "Music", link: "/music" },
+    { title: "My setup", link: "/mysetup" },
+];
+
+export const links_items = [
+    {
+        label: "EMAIL LIST",
+        link: "https://cryptpad.fr/form/#/2/form/view/1+kfIKTkWNOZDiSp4HzobLPILc7NDwtYmfU6NpR6IHU/",
+        description: "Email List",
+        img: EmailList,
+    },
+    {
+        label: "SPACEHEY",
+        link: "https://spacehey.com/terminallylainpilled",
+        description: "Spacehey",
+        img: SpaceHey,
+    },
+    {
+        label: "STEAM",
+        link: "https://steamcommunity.com/id/rmstallbaumer/",
+        description: "steam",
+        img: LogoSteam,
+    },
+    {
+        label: "MINECRAFT SERVER",
+        link: "https://lainpilled.com/minecraft.html",
+        description: "NC Server",
+        img: Minecraft,
+    },
+    {
+        label: "DISCORD",
+        link: "https://discord.gg/Ggh2YS2EWX",
+        description: "Discord",
+        img: Discord,
+    },
+    {
+        label: "CHURCH OF LINUX",
+        link: "https://churchoflinux.org/",
+        description: "Church of linux",
+        img: Tux,
+    },
+    {
+        label: "LIBRECHAN",
+        link: "https://librechan.org/",
+        description: "LibreChan",
+        img: Librechan,
+    },
+];
+---

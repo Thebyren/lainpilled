@@ -1,0 +1,81 @@
+---
+interface Props {
+    entry: {
+        label: string;
+        link: string;
+        description: string;
+        img?: any;
+    }[];
+}
+const { entry } = Astro.props;
+---
+
+<div class="links">
+    {
+        entry.map((item) => (
+            <article>
+                <div>
+                    <h3>
+                        <a href={item.link} target="_blank">
+                            {item.label}
+                        </a>
+                    </h3>
+                    <p>description: {item.description}</p>
+                </div>
+                { item.img ? 
+                <div class="img">
+                    <a href={item.link} target="_blank">
+                    <item.img/> 
+                    </a>
+                </div>
+                : null}
+            </article>
+        ))}
+</div>
+
+<style>
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    p {
+        color: rgb(0, 161, 219);
+    }
+    article {
+        flex: 1 1 calc(40% - 2rem);
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding-block: 1rem;
+        padding-inline: 2rem;
+        margin: 1rem;
+        border: 1pt solid rgba(70, 100, 150, 0.6);
+        background-color: rgba(70, 100, 150, 0.1);
+        border-radius: 1rem;
+        transition: all ease-in 0.6s;
+     
+    }
+    article:hover {
+        background-color: rgba(114, 135, 171, 0.2);
+    }
+    article div {
+        display: flex;
+        flex-direction: column;
+        padding-block: 1rem;
+        gap: 1rem;
+    }
+    .content {
+        padding: 0.5rem;
+    }
+    @media screen and (max-width: 800px) {
+        article {
+            flex: 1 1 calc(80% - 2rem);
+        }
+        
+    }
+</style>

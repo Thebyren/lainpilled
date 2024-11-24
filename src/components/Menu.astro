@@ -1,0 +1,63 @@
+---
+interface Props{
+	items: {
+      title:string,
+      link:string
+    }[];
+}
+
+const { items } = Astro.props;
+---
+<menu type="toolbar">
+    <ul>
+    {
+        items.map((item)=>{
+            return(
+
+                <li>
+                <a href={item.link}>{item.title}</a>
+            </li>
+            )
+        })
+    }
+    </ul>
+</menu>
+<style>
+    menu{
+    background-color:#072733ff;
+    padding: 0.5rem;
+    }
+    li{
+        background-color: rgba(137, 165, 215, 0.1);
+        border: 0.1rem solid slategray;
+        box-shadow: inset 0 0 1rem 0.2rem #072733ff;
+        border-radius: 0.4rem;
+        margin-inline: 0.5rem;
+        transition: all ease-in-out 0.3s ;
+    }
+    ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+    a{
+        display: flex;
+        text-decoration: none;
+        font-size: large;
+        padding: 0.4rem 2rem;
+    }
+    li:hover{
+        color:rgb(80, 120, 133);
+        background-color: slategray;
+        }
+    @media only screen and (max-width:600px) {
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding: 0;
+        }
+    }
+    
+</style>

@@ -1,0 +1,26 @@
+---
+
+import SectionSetup from './SectionSetup.astro';
+import { getCollection } from 'astro:content';
+
+
+// Obtiene las entradas de mysetup
+const mySetupPosts = await getCollection('mysetup');
+
+// Renderiza el contenido de cada entrada de mysetup
+const renderedSetupPosts = await Promise.all(
+  mySetupPosts.map(async (setupPostEntry) => {
+    const { Content } = await setupPostEntry.render();
+    return { ...setupPostEntry, Content }; // Retorna tanto los datos como el contenido renderizado
+  })
+);
+
+---
+<div>
+  {renderedSetupPosts.map(setupPostEntry => (
+    <SectionSetup entry={setupPostEntry} key={setupPostEntry.slug}>
+      <setupPostEntry.Content /> <!-- Renderiza el contenido Markdown -->
+    </SectionSetup>
+  ))}
+</div>
+

@@ -1,0 +1,38 @@
+---
+const { entry } = Astro.props;
+---
+
+<article class="post" transition:animate="slide">
+  <header>
+    <h1>{entry.data.title}</h1>
+  </header>
+  <div class="content">
+    <slot/>
+  </div>
+</article>
+
+
+<style>
+    .content img {
+  display: block; /* Opcional: para que las imágenes no tengan espacio extra alrededor */
+  margin: 2rem auto; /* Opcional: centra las imágenes horizontalmente */
+}
+
+  h1{
+    color:rgb(0, 161, 219);
+  }
+  header{
+    display: flex;
+    justify-content: space-between;
+  }
+  article{
+    padding: 1rem;
+    margin: 2em;
+    border: 1pt solid  rgba(70,100,150,0.6) ;
+		background-color: rgba(70,100,150,0.1);
+    border-radius: 1rem;
+  }
+  .content{
+    padding: 0.5rem;
+  }
+</style>

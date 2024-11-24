@@ -1,0 +1,50 @@
+<footer>
+    <p>&copy 2024 Lainpilled. <a href="https://github.com/primalxaxa/lainwebsite">source code</a></p>
+    <p class="monero">Monero SMR: 454c2q6ZesJj7NiMgxwH8Gc1wTqExptJHChtuXb6sMUw2575LZ2P6AmKpLh5LB9Ldp8amPWHo8xmbGVqaNSVp3JJMhQ46My</p>
+    <p class="bitcoin">Bitcoin BTC: bc1q4gtqxk7ltvz4zplz95mv254yd0v626fzqw8mdl</p>
+</footer>
+
+<script>
+const monero = document.querySelectorAll('p.monero')
+monero.forEach((p) => {
+    p.addEventListener('click', ()=>{
+        navigator.clipboard.writeText('454c2q6ZesJj7NiMgxwH8Gc1wTqExptJHChtuXb6sMUw2575LZ2P6AmKpLh5LB9Ldp8amPWHo8xmbGVqaNSVp3JJMhQ46My')
+        alert('wallet copied');
+});
+});
+  
+const bitcoin = document.querySelectorAll('p.bitcoin')
+bitcoin.forEach((p) => {
+    p.addEventListener('click', ()=>{
+        navigator.clipboard.writeText('bc1q4gtqxk7ltvz4zplz95mv254yd0v626fzqw8mdl')
+        alert('wallet copied');
+});
+});
+</script>
+
+<style>
+    .monero, .bitcoin{
+        cursor: pointer;
+    }
+    p{
+        margin-block-end: 1rem;
+        margin-inline: 1rem;
+        border-radius: 0.3rem;
+        border: 1pt solid #486975;
+        background-color: #213c46;
+        padding: 10px;
+    }
+    
+    p:last-child{
+        margin-bottom: 0.2rem;
+    }
+    footer{
+        text-align: center;
+        background-color: #072733ff ;
+        padding-block: 1.1rem;
+        word-wrap: break-word;
+    }
+    a{
+        color:mediumslateblue;
+    }
+</style>

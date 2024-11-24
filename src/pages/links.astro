@@ -1,0 +1,21 @@
+---
+import LinkTag from "../components/LinkTag.astro";
+import Layout from "../layouts/Layout.astro";
+
+import { links_menu_items, links_items } from "../content/data.astro";
+---
+
+<Layout title="lainpilled links" menuItems={links_menu_items}>
+    <LinkTag entry={links_items} />
+</Layout>
+
+<style>
+    .content {
+        justify-content: space-between;
+        height: auto;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+    }
+</style>

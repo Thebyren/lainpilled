@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Music_player from "../components/Music.jsx";
+const items = [
+    { title: "links", link: "/links" },
+    { title: "pictures", link: "/pictures" },
+    { title: "home", link: "/" },
+    { title: "My setup", link: "/mysetup" },
+];
+---
+<Layout title="lainpilled pictures" menuItems={items}>
+    <div class="spotify-container">
+        <h3>My music in spotify</h3>
+        <iframe 
+            src="https://open.spotify.com/embed/playlist/4L7P8OM9S0fQBhrLGe3JDh?utm_source=generator"
+            class="spotify-embed"
+            allowfullscreen="true" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+    <h3>My youtube Music Collection</h3>
+    <div class="videos">
+        <iframe width="720" height="580" src="https://www.youtube.com/embed/dA9F7BRjdOE" title="Bôa - Duvet (Atmospheric DnB remix)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="720" height="580" src="https://www.youtube.com/embed/z0wD4ySLpM8" title="Катя Лель - Долетай (speed up)(nightcore)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="hires_music">
+        <h3>My Hi-Res Music Collection</h3>
+    </div>
+
+
+<Music_player client:load />
+</Layout>
+
+<style>
+    h3{
+        text-align: center;;
+    }
+    .videos iframe {
+        border-radius: 12px;
+        height: 20rem;
+        border: 0.2rem solid  rgba(70,100,150,0.5);
+    }
+    .videos iframe:hover {
+        background-color: rgba(70,100,150,0.7);
+        box-shadow: 0rem 0rem 2rem rgba(70,100,150, 0.2);
+    }
+    .videos {
+        gap: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 2rem 1rem;
+    }
+    .spotify-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .spotify-embed {
+        width: 100%;
+        max-width: 600px; /* Ajusta según el diseño */
+        height: 80vh; /* Ajusta según sea necesario */
+        border: none;
+        margin: 1rem;
+        border-radius: 12px;
+    }
+</style>
+
+

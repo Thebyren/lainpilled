@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Imgs from "../components/Imgs.astro";
+
+const items = [
+    { title: "links", link: "/links" },
+    { title: "home", link: "/" },
+    { title: "Music", link: "/music" },
+    { title: "My setup", link: "/mysetup" },
+];
+
+---
+
+<Layout title="lainpilled pictures" menuItems={items}>
+            <h2>My pictures</h2>
+            <Imgs/>
+            <hr/>
+</Layout>
+
+<style>
+    h2{
+		text-align: center;
+		font-size: xx-large;
+		background-color: rgba(70,100,150,0.1);
+	}
+    hr {
+        border: 0px;
+        margin-block: 6rem;
+    }
+    .content {
+        justify-content: space-between;
+        height: auto;
+    }
+</style>

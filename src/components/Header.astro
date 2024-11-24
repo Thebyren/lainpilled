@@ -1,0 +1,54 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import Menu from "./Menu.astro";
+const { items } = Astro.props;
+---
+
+<header>
+    
+		<ViewTransitions/>
+    <div class="background">
+        <p class="title">
+            <a href="/">
+                lainpilled        
+            </a>
+        </p>
+        <p class="subtitle">
+            I am connected to the world through the wired
+        </p>
+    </div>
+    <Menu  items={items}></Menu>
+</header>
+
+
+<style>
+    a{
+        text-decoration: none;
+        color:whitesmoke;
+        font-size: xxx-large;
+        font-family: monospace;
+        text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
+    }
+    header{
+        margin-bottom: 2rem;
+    }
+    .title {
+        margin-top: 0.2rem;
+    }
+    .subtitle{
+        color:whitesmoke;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+    }
+    .background{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        padding: 3rem 0 5rem 0;
+        
+        text-align: center;
+        
+        background-size: 19rem;
+        background-image: url("/src/assets/lainBackground.gif");
+    }
+</style>
